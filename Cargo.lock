@@ -2034,6 +2034,112 @@ dependencies = [
 ]
 
 [[package]]
+name = "exzo-account-program"
+version = "0.0.1"
+dependencies = [
+ "base64 0.13.1",
+ "borsh",
+ "borsh-derive",
+ "serde",
+ "solana-sdk",
+]
+
+[[package]]
+name = "exzo-install"
+version = "1.9.29"
+dependencies = [
+ "atty",
+ "bincode",
+ "binstall-tar",
+ "bzip2",
+ "chrono",
+ "clap 2.34.0",
+ "console 0.11.3",
+ "ctrlc",
+ "dirs-next",
+ "indicatif 0.15.0",
+ "lazy_static",
+ "nix 0.23.2",
+ "reqwest",
+ "semver 1.0.16",
+ "serde",
+ "serde_json",
+ "serde_yaml",
+ "solana-clap-utils",
+ "solana-client",
+ "solana-config-program",
+ "solana-logger 1.9.29",
+ "solana-sdk",
+ "solana-version",
+ "tempfile",
+ "url 2.3.1",
+ "winapi 0.3.9",
+ "winreg 0.7.0",
+]
+
+[[package]]
+name = "exzo-relying-party-program"
+version = "0.0.1"
+dependencies = [
+ "borsh",
+ "borsh-derive",
+ "serde",
+ "serde_with",
+ "solana-program 1.9.29",
+]
+
+[[package]]
+name = "exzo-validator"
+version = "1.9.29"
+dependencies = [
+ "chrono",
+ "clap 2.34.0",
+ "console 0.15.5",
+ "core_affinity",
+ "evm-state",
+ "fd-lock",
+ "indicatif 0.16.2",
+ "jsonrpc-core",
+ "jsonrpc-core-client",
+ "jsonrpc-derive",
+ "jsonrpc-ipc-server",
+ "jsonrpc-server-utils 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libc",
+ "log 0.4.17",
+ "num_cpus",
+ "rand 0.7.3",
+ "signal-hook",
+ "solana-clap-utils",
+ "solana-cli-config",
+ "solana-client",
+ "solana-core",
+ "solana-download-utils",
+ "solana-entry",
+ "solana-faucet",
+ "solana-genesis-utils",
+ "solana-gossip",
+ "solana-ledger",
+ "solana-logger 1.9.29",
+ "solana-metrics",
+ "solana-net-utils",
+ "solana-perf",
+ "solana-poh",
+ "solana-replica-lib",
+ "solana-rpc",
+ "solana-runtime",
+ "solana-sdk",
+ "solana-send-transaction-service",
+ "solana-streamer",
+ "solana-test-validator",
+ "solana-version",
+ "solana-vote-program",
+ "symlink",
+ "sysctl",
+ "tempfile",
+ "tikv-jemallocator",
+]
+
+[[package]]
 name = "failure"
 version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3724,6 +3830,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "578ede34cf02f8924ab9447f50c28075b4d3e5b269972345e7e0372b38c6cdcd"
 dependencies = [
  "autocfg 1.1.0",
+ "libm",
 ]
 
 [[package]]
@@ -4442,9 +4549,9 @@ dependencies = [
 
 [[package]]
 name = "proptest"
-version = "1.0.0"
+version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1e0d9cc07f18492d879586c92b485def06bc850da3118075cd45d50e9c95b0e5"
+checksum = "29f1b898011ce9595050a68e60f90bad083ff2987a695a42357134c8381fba70"
 dependencies = [
  "bit-set",
  "bitflags",
@@ -4458,6 +4565,7 @@ dependencies = [
  "regex-syntax",
  "rusty-fork",
  "tempfile",
+ "unarray",
 ]
 
 [[package]]
@@ -5859,6 +5967,8 @@ dependencies = [
  "bincode",
  "bs58",
  "bv",
+ "exzo-account-program",
+ "exzo-relying-party-program",
  "lazy_static",
  "serde",
  "serde_derive",
@@ -5868,8 +5978,6 @@ dependencies = [
  "solana-vote-program",
  "spl-token",
  "thiserror",
- "exzo-account-program",
- "exzo-relying-party-program",
  "zstd",
 ]
 
@@ -6349,6 +6457,8 @@ dependencies = [
  "etcd-client",
  "evm-rpc",
  "evm-state",
+ "exzo-account-program",
+ "exzo-relying-party-program",
  "fs_extra",
  "hex",
  "histogram",
@@ -6410,8 +6520,6 @@ dependencies = [
  "thiserror",
  "tokio",
  "trees",
- "exzo-account-program",
- "exzo-relying-party-program",
 ]
 
 [[package]]
@@ -7215,6 +7323,7 @@ version = "1.9.29"
 dependencies = [
  "clap 2.34.0",
  "crossbeam-channel",
+ "exzo-validator",
  "log 0.4.17",
  "rand 0.7.3",
  "serial_test 0.5.1",
@@ -7236,7 +7345,6 @@ dependencies = [
  "solana-version",
  "tempfile",
  "tonic-build 0.8.4",
- "exzo-validator",
 ]
 
 [[package]]
@@ -7250,6 +7358,8 @@ dependencies = [
  "dashmap 4.0.2",
  "evm-rpc",
  "evm-state",
+ "exzo-account-program",
+ "exzo-relying-party-program",
  "itertools",
  "jsonrpc-core",
  "jsonrpc-core-client",
@@ -7302,8 +7412,6 @@ dependencies = [
  "tracing-attributes",
  "tracing-opentelemetry 0.16.0",
  "tracing-subscriber 0.3.16",
- "exzo-account-program",
- "exzo-relying-party-program",
 ]
 
 [[package]]
@@ -7352,6 +7460,8 @@ dependencies = [
  "ed25519-dalek",
  "evm-rpc",
  "evm-state",
+ "exzo-account-program",
+ "exzo-relying-party-program",
  "flate2",
  "fnv",
  "index_list",
@@ -7391,8 +7501,6 @@ dependencies = [
  "tar",
  "tempfile",
  "thiserror",
- "exzo-account-program",
- "exzo-relying-party-program",
  "walkdir",
  "zstd",
 ]
@@ -9026,6 +9134,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "unarray"
+version = "0.1.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "eaea85b334db583fe3274d12b4cd1880032beab409c0d774be044d4480ab9a94"
+
+[[package]]
 name = "unicase"
 version = "1.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -9183,112 +9297,6 @@ name = "vec_map"
 version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f1bddf1187be692e79c5ffeab891132dfb0f236ed36a43c7ed39f1165ee20191"
-
-[[package]]
-name = "exzo-account-program"
-version = "0.0.1"
-dependencies = [
- "base64 0.13.1",
- "borsh",
- "borsh-derive",
- "serde",
- "solana-sdk",
-]
-
-[[package]]
-name = "exzo-install"
-version = "1.9.29"
-dependencies = [
- "atty",
- "bincode",
- "binstall-tar",
- "bzip2",
- "chrono",
- "clap 2.34.0",
- "console 0.11.3",
- "ctrlc",
- "dirs-next",
- "indicatif 0.15.0",
- "lazy_static",
- "nix 0.23.2",
- "reqwest",
- "semver 1.0.16",
- "serde",
- "serde_json",
- "serde_yaml",
- "solana-clap-utils",
- "solana-client",
- "solana-config-program",
- "solana-logger 1.9.29",
- "solana-sdk",
- "solana-version",
- "tempfile",
- "url 2.3.1",
- "winapi 0.3.9",
- "winreg 0.7.0",
-]
-
-[[package]]
-name = "exzo-relying-party-program"
-version = "0.0.1"
-dependencies = [
- "borsh",
- "borsh-derive",
- "serde",
- "serde_with",
- "solana-program 1.9.29",
-]
-
-[[package]]
-name = "exzo-validator"
-version = "1.9.29"
-dependencies = [
- "chrono",
- "clap 2.34.0",
- "console 0.15.5",
- "core_affinity",
- "evm-state",
- "fd-lock",
- "indicatif 0.16.2",
- "jsonrpc-core",
- "jsonrpc-core-client",
- "jsonrpc-derive",
- "jsonrpc-ipc-server",
- "jsonrpc-server-utils 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "libc",
- "log 0.4.17",
- "num_cpus",
- "rand 0.7.3",
- "signal-hook",
- "solana-clap-utils",
- "solana-cli-config",
- "solana-client",
- "solana-core",
- "solana-download-utils",
- "solana-entry",
- "solana-faucet",
- "solana-genesis-utils",
- "solana-gossip",
- "solana-ledger",
- "solana-logger 1.9.29",
- "solana-metrics",
- "solana-net-utils",
- "solana-perf",
- "solana-poh",
- "solana-replica-lib",
- "solana-rpc",
- "solana-runtime",
- "solana-sdk",
- "solana-send-transaction-service",
- "solana-streamer",
- "solana-test-validator",
- "solana-version",
- "solana-vote-program",
- "symlink",
- "sysctl",
- "tempfile",
- "tikv-jemallocator",
-]
 
 [[package]]
 name = "version_check"
