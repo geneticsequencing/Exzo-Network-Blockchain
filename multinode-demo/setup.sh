@@ -29,8 +29,8 @@ fi
 if [[ -f $BOOTSTRAP_VALIDATOR_VOTE_KEYPAIR ]]; then
   cp -f "$BOOTSTRAP_VALIDATOR_VOTE_KEYPAIR" "$SOLANA_CONFIG_DIR"/bootstrap-validator/vote-account.json
 else
-$exzo_keygen new --no-passphrase -so "$SOLANA_CONFIG_DIR"/bootstrap-validator/vote-account.json
-$exzo_keygen new --no-passphrase -so "$SOLANA_CONFIG_DIR"/bootstrap-validator/stake-account.json
+  $exzo_keygen new --no-passphrase -so "$SOLANA_CONFIG_DIR"/bootstrap-validator/vote-account.json
+fi
 
 args=(
     "$@"
