@@ -73,7 +73,7 @@ impl Default for Config {
             keypair_path.extend(&[".config", "exzo", "id.json"]);
             keypair_path.to_str().unwrap().to_string()
         };
-        let json_rpc_url = "https://mainnet.exzo.technology".to_string();
+        let json_rpc_url = "https://rpc-main-1.exzo.network".to_string();
 
         // Empty websocket_url string indicates the client should
         // `Config::compute_websocket_url(&json_rpc_url)`
@@ -177,13 +177,13 @@ mod test {
     #[test]
     fn compute_websocket_url() {
         assert_eq!(
-            Config::compute_websocket_url("http://devnet.exzo.technology"),
-            "ws://devnet.exzo.technology/".to_string()
+            Config::compute_websocket_url("http://rpc-dev-1.exzo.network"),
+            "ws://rpc-dev-1.exzo.network/".to_string()
         );
 
         assert_eq!(
-            Config::compute_websocket_url("https://devnet.exzo.technology"),
-            "wss://devnet.exzo.technology/".to_string()
+            Config::compute_websocket_url("https://rpc-dev-1.exzo.network"),
+            "wss://rpc-dev-1.exzo.network/".to_string()
         );
 
         assert_eq!(

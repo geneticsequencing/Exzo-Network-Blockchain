@@ -40,7 +40,7 @@ where
                 .global(true)
                 .takes_value(true)
                 .value_name("URL")
-                .help("RPC entrypoint address. i.e. https://devnet.exzo.technology"),
+                .help("RPC entrypoint address. i.e. https://rpc-dev-1.exzo.network"),
         )
         .subcommand(
             SubCommand::with_name("distribute-tokens")

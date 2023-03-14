@@ -15,8 +15,8 @@
 * Website - https://exzo.network
 * Main Explorer - https://exzoscan.io
 * Test Explorer - https://testnet.exzoscan.io
-* RPC Mainnet - https://mainnet.exzo.technology
-* RPC Testnet - https://testnet.exzo.technology
+* RPC Mainnet - https://rpc-main-1.exzo.network
+* RPC Testnet - https://rpc-test-1.exzo.network
 * Twitter - https://twitter.com/exzo_network
 * Telegram - https://t.me/Exzo_Network
 * Telegram - https://t.me/exzoc
@@ -105,7 +105,7 @@ Info about EVM integration is at our [docs](https://docs.exzo.technology/evm).
 Start your own Development network locally, instructions are in the [online docs](https://docs.exzo.technology/cluster/bench-tps).
 
 #### Accessing the remote testnet and mainnet
-* `testnet` - public accessible via bootstrap.testnet.exzo.technology.
+* `testnet` - public accessible via bootstrap.rpc-test-1.exzo.network.
 * `mainnet` - public accessible via bootstrap.exzo.technology.
 
 ## Benchmarking

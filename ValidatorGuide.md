@@ -44,12 +44,12 @@ $ cargo build --release
 ### Configure EXZO CLI
 **Mainnet**
 ```
-exzo config set --url https://mainnet.exzo.technology
+exzo config set --url https://rpc-main-1.exzo.network
 ```
 
 **Testnet**
 ```
-exzo config set --url https://testnet.exzo.technology
+exzo config set --url https://rpc-test-1.exzo.network
 ```
 
 ### Generate Validator Identity

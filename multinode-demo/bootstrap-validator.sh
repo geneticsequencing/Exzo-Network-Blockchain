@@ -14,13 +14,13 @@ if [[ "$SOLANA_GPU_MISSING" -eq 1 ]]; then
 fi
 
 if [[ -n $SOLANA_CUDA ]]; then
-  program=$solana_validator_cuda
+  program=$exzo_validator_cuda
 else
-  program=$solana_validator
+  program=$exzo_validator
 fi
 
 no_restart=0
-maybeRequireTower=true
+maybeRequireTower=false
 
 args=()
 while [[ -n $1 ]]; do
