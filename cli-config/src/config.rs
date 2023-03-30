@@ -73,7 +73,7 @@ impl Default for Config {
             keypair_path.extend(&[".config", "exzo", "id.json"]);
             keypair_path.to_str().unwrap().to_string()
         };
-        let json_rpc_url = "https://rpc-main-1.exzo.network".to_string();
+        let json_rpc_url = "https://rpc-main-1.exzo.network/rpc".to_string();
 
         // Empty websocket_url string indicates the client should
         // `Config::compute_websocket_url(&json_rpc_url)`
