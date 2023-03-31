@@ -16,9 +16,9 @@
 { # this ensures the entire script is downloaded #
     
     if [ -z "$SOLANA_DOWNLOAD_ROOT" ]; then
-        SOLANA_DOWNLOAD_ROOT="https://github.com/ExzoNetwork/exzocoin/releases/download/"
+        SOLANA_DOWNLOAD_ROOT="https://github.com/ExzoNetwork/Exzo-Network-Blockchain/releases/download/"
     fi
-    GH_LATEST_RELEASE="https://api.github.com/repos/ExzoNetwork/exzocoin/releases/latest"
+    GH_LATEST_RELEASE="https://api.github.com/repos/ExzoNetwork/Exzo-Network-Blockchain/releases/latest"
     
     set -e
     

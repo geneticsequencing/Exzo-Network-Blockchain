@@ -6,7 +6,7 @@ description = "Blockchain, Rebuilt for Scale"
 version = "1.9.29"
 repository = "https://github.com/solana-labs/solana"
 license = "Apache-2.0"
-homepage = "https://www.exzo.network/"
+homepage = "https://exzo.network/"
 default-run = "exzo-validator"
 
 [dependencies]

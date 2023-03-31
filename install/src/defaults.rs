@@ -1,9 +1,9 @@
-pub const JSON_RPC_URL: &str = "https://rpc-dev-1.exzo.network";
+pub const JSON_RPC_URL: &str = "http://rpc-dev-1.exzo.network/rpc";
 
 /// Returns last 30 releases from GitHub Release REST API, could be
 /// increased up to 100 (?per_page=100). If we need a list with more
 /// than 100 releases, we would need to implement pagination (?page_id=2)
-pub const GITHUB_RELEASES_URL: &str = "https://api.github.com/repos/ExzoNetwork/exzocoin/releases";
+pub const GITHUB_RELEASES_URL: &str = "https://api.github.com/repos/ExzoNetwork/Exzo-Network-Blockchain/releases";
 
 lazy_static! {
     pub static ref CONFIG_PATH: Option<String> = {

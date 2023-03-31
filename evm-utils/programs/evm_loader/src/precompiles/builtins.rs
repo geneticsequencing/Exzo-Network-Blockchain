@@ -168,27 +168,27 @@ where
 // TODO: Implement some procedural macro to render this in more
 pub static ETH_TO_XZO_ADDR: Lazy<H160> = Lazy::new(|| {
     H160::from_str(concat!(
-        "56454c41532d434841494e", // 'VELAS-CHAIN'
+        "56454c41532d434841494e", // 'EXZO-CHAIN'
         "0000000000",             // just spaces
         "53574150",               // 'SWAP'
     ))
     .expect("Serialization of static data should be determenistic and never fail.")
 });
 
-type EthToVlxImp = PromiseFunc<
-    fn(Pubkey, NativeContext) -> Result<(PrecompileOutput, u64, Vec<EthToVlxResult>)>,
-    fn(AccountStructure, EthToVlxResult) -> Result<()>,
+type EthToXzoImp = PromiseFunc<
+    fn(Pubkey, NativeContext) -> Result<(PrecompileOutput, u64, Vec<EthToXzoResult>)>,
+    fn(AccountStructure, EthToXzoResult) -> Result<()>,
     Pubkey,
-    EthToVlxResult,
+    EthToXzoResult,
 >;
 
 #[derive(Serialize, Deserialize, Debug)]
-pub struct EthToVlxResult {
+pub struct EthToXzoResult {
     pubkey: Pubkey,
     amount: u64,
 }
 
-pub static ETH_TO_XZO_CODE: Lazy<NativeContract<EthToVlxImp, Pubkey>> = Lazy::new(|| {
+pub static ETH_TO_XZO_CODE: Lazy<NativeContract<EthToXzoImp, Pubkey>> = Lazy::new(|| {
     #[allow(deprecated)]
     let abi = Function {
         name: String::from("transferToNative"),
@@ -206,7 +206,7 @@ pub static ETH_TO_XZO_CODE: Lazy<NativeContract<EthToVlxImp, Pubkey>> = Lazy::ne
     fn implementation(
         pubkey: Pubkey,
         cx: NativeContext,
-    ) -> Result<(PrecompileOutput, u64, Vec<EthToVlxResult>)> {
+    ) -> Result<(PrecompileOutput, u64, Vec<EthToXzoResult>)> {
         // EVM should ensure that user has enough tokens, before calling this precompile.
 
         log::trace!("Precompile ETH_TO_XZO");
@@ -262,7 +262,7 @@ pub static ETH_TO_XZO_CODE: Lazy<NativeContract<EthToVlxImp, Pubkey>> = Lazy::ne
             0,
             vec![
                 // Vec::new(), // Only support empty topics for now
-                EthToVlxResult {
+                EthToXzoResult {
                     pubkey,
                     amount: lamports,
                 },
@@ -270,7 +270,7 @@ pub static ETH_TO_XZO_CODE: Lazy<NativeContract<EthToVlxImp, Pubkey>> = Lazy::ne
         ))
     }
 
-    fn handle_promise(accounts: AccountStructure, promise: EthToVlxResult) -> Result<()> {
+    fn handle_promise(accounts: AccountStructure, promise: EthToXzoResult) -> Result<()> {
         log::trace!("Promise handle ETH_TO_XZO {:?}", promise);
         let lamports = promise.amount;
         let pubkey = promise.pubkey;

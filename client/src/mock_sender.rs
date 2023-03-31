@@ -409,7 +409,7 @@ impl RpcSender for MockSender {
             "getInflationGovernor" => serde_json::to_value(
                 RpcInflationGovernor {
                     initial: 0.08,
-                    terminal: 0.015,
+                    terminal: 0.005,
                     taper: 0.15,
                     foundation: 0.05,
                     foundation_term: 7.0,

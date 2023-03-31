@@ -20,7 +20,7 @@ else
 fi
 
 no_restart=0
-maybeRequireTower=false
+maybeRequireTower=true
 
 args=()
 while [[ -n $1 ]]; do

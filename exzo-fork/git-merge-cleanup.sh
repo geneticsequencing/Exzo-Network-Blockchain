@@ -35,10 +35,10 @@ pathspec_file="$current_folder/automerge-$BASE-$LOCAL.txt"
 keep_ours_file="$current_folder/exzo-rewrite"
 
 # Exzo use multiple repositories instead of big mono-repo:
-# 1. exzocoin is repository only for blockchain related stuff.
-# 2. web3-js mooved into https://github.com/velas/web3.js
-# 3. Explorer mooved into https://github.com/velas/native-explorer
-# 4. Docs are mooved into https://github.com/ExzoNetwork/exzocoin-docs
+# 1. exzo-chain is repository only for blockchain related stuff.
+# 2. web3-js mooved into https://github.com/ExzoNetwork/web3.js
+# 3. Explorer mooved into https://github.com/ExzoNetwork/native-explorer
+# 4. Docs are mooved into https://github.com/ExzoNetwork/Exzo-Network-Blockchain-docs
 # 5. account-benches
 
 # Removes js related stuf
@@ -47,7 +47,7 @@ git rm -rf explorer web3.js docs
 # git checkout --ours --pathspec-from-file c
 
 # Now save all files that was modified in remote but wasnt in our local
-# Filter out changes from file that wasn't touched by Exzo changes
+# Filter out changes from file that wasn't touched by exzo changes
 
 for file in $(comm -23 $remote_changes $exzo_changes)
 do

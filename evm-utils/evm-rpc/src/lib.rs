@@ -134,7 +134,7 @@ impl Default for RPCBlock {
             difficulty: U256::zero().into(),
             total_difficulty: U256::zero().into(),
             uncles: vec![],
-            extra_data: b"Exzo EVM compatibility layers...".to_vec().into(),
+            extra_data: b"Exzo EVM compatibility layer...".to_vec().into(),
             sha3_uncles: Hex(empty_uncle),
         }
     }
@@ -150,10 +150,10 @@ impl RPCBlock {
         let block_hash = header.hash();
         let extra_data = match header.version {
             evm_state::BlockVersion::InitVersion => {
-                b"Exzo EVM compatibility layers...".to_vec().into()
+                b"Exzo EVM compatibility layer...".to_vec().into()
             }
             evm_state::BlockVersion::VersionConsistentHashes => {
-                b"Exzo EVM compatibility layers.v2".to_vec().into()
+                b"Exzo EVM compatibility layer.v2".to_vec().into()
             }
         };
         RPCBlock {
@@ -630,6 +630,7 @@ pub mod trace {
             meta_info: Option<TraceMeta>,
         ) -> BoxFuture<Result<Vec<TraceResultsWithTransactionHash>, Error>>;
 
+        #[allow(clippy::too_many_arguments)]
         #[allow(clippy::type_complexity)]
         #[rpc(meta, name = "debug_recoverBlockHeader")]
         fn recover_block_header(
@@ -639,6 +640,10 @@ pub mod trace {
             last_hashes: Vec<H256>,
             block_header: BlockHeader,
             state_root: H256,
+            unsigned_tx_fix: bool,
+            clear_logs_on_error: bool,
+            accept_zero_gas_price_with_native_fee: bool,
+            burn_gas_price: u64,
         ) -> BoxFuture<Result<(Block, Vec<Hex<H256>>), Error>>;
     }
 }

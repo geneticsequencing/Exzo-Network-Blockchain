@@ -40,7 +40,7 @@ where
                 .global(true)
                 .takes_value(true)
                 .value_name("URL")
-                .help("RPC entrypoint address. i.e. https://rpc-dev-1.exzo.network"),
+                .help("RPC entrypoint address. i.e. https://rpc-dev-1.exzo.network/rpc"),
         )
         .subcommand(
             SubCommand::with_name("distribute-tokens")
@@ -231,9 +231,9 @@ where
                         .help("Stake Account Address"),
                 )
                 .arg(
-                    Arg::with_name("unlocked_vlx")
+                    Arg::with_name("unlocked_xzo")
                         .default_value("1.0")
-                        .long("unlocked-vlx")
+                        .long("unlocked-xzo")
                         .takes_value(true)
                         .value_name("XZO_AMOUNT")
                         .help("Amount of XZO to put in system account to pay for fees"),

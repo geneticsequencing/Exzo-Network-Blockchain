@@ -177,13 +177,13 @@ mod test {
     #[test]
     fn compute_websocket_url() {
         assert_eq!(
-            Config::compute_websocket_url("http://rpc-dev-1.exzo.network"),
-            "ws://rpc-dev-1.exzo.network/".to_string()
+            Config::compute_websocket_url("http://rpc-dev-1.exzo.network/rpc"),
+            "ws://rpc-dev-1.exzo.network/rpc/".to_string()
         );
 
         assert_eq!(
-            Config::compute_websocket_url("https://rpc-dev-1.exzo.network"),
-            "wss://rpc-dev-1.exzo.network/".to_string()
+            Config::compute_websocket_url("https://rpc-dev-1.exzo.network/rpc"),
+            "wss://rpc-dev-1.exzo.network/rpc/".to_string()
         );
 
         assert_eq!(

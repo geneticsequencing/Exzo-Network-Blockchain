@@ -11,7 +11,7 @@ here="$(dirname "$0")"
 # shellcheck source=ci/semver_bash/semver.sh
 source "$here"/semver_bash/semver.sh
 
-remote=https://github.com/ExzoNetwork/exzocoin.git
+remote=https://github.com/ExzoNetwork/Exzo-Network-Blockchain.git
 
 # Fetch all vX.Y.Z tags
 #

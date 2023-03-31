@@ -15,8 +15,8 @@
 * Website - https://exzo.network
 * Main Explorer - https://exzoscan.io
 * Test Explorer - https://testnet.exzoscan.io
-* RPC Mainnet - https://rpc-main-1.exzo.network
-* RPC Testnet - https://rpc-test-1.exzo.network
+* RPC Mainnet - https://rpc-main-1.exzo.network/rpc
+* RPC Testnet - https://rpc-test-1.exzo.network/rpc
 * Twitter - https://twitter.com/exzo_network
 * Telegram - https://t.me/Exzo_Network
 * Telegram - https://t.me/exzoc
