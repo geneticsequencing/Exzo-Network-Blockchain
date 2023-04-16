@@ -270,12 +270,12 @@ impl EvmCliCommand {
 fn get_evm_balance(rpc_client: &RpcClient, address: evm::H160) -> anyhow::Result<()> {
     let balance = rpc_client.get_evm_balance(&address)?;
     let (lamports, _dust) = gweis_to_lamports(balance);
-    let xzo = lamports_to_sol(lamports);
+    let vlx = lamports_to_sol(lamports);
 
     println!(
         "EVM address: {:?}, balance {} ({} in hex)",
         address,
-        xzo,
+        vlx,
         Hex(balance)
     );
     Ok(())

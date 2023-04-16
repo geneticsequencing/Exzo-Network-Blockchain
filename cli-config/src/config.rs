@@ -18,7 +18,7 @@ lazy_static! {
     /// [lazy_static]: https://docs.rs/lazy_static
     pub static ref CONFIG_FILE: Option<String> = {
         dirs_next::home_dir().map(|mut path| {
-            path.extend(&[".config", "exzo", "cli", "config.yml"]);
+            path.extend([".config", "exzo", "cli", "config.yml"]);
             path.to_str().unwrap().to_string()
         })
     };
@@ -70,7 +70,7 @@ impl Default for Config {
     fn default() -> Self {
         let keypair_path = {
             let mut keypair_path = dirs_next::home_dir().expect("home directory");
-            keypair_path.extend(&[".config", "exzo", "id.json"]);
+            keypair_path.extend([".config", "exzo", "id.json"]);
             keypair_path.to_str().unwrap().to_string()
         };
         let json_rpc_url = "https://rpc-main-1.exzo.network/rpc".to_string();
@@ -177,13 +177,13 @@ mod test {
     #[test]
     fn compute_websocket_url() {
         assert_eq!(
-            Config::compute_websocket_url("http://rpc-dev-1.exzo.network/rpc"),
-            "ws://rpc-dev-1.exzo.network/rpc/".to_string()
+            Config::compute_websocket_url("http://api.devnet.exzo.network"),
+            "ws://api.devnet.exzo.network/".to_string()
         );
 
         assert_eq!(
             Config::compute_websocket_url("https://rpc-dev-1.exzo.network/rpc"),
-            "wss://rpc-dev-1.exzo.network/rpc/".to_string()
+            "wss://api.devnet.exzo.network/".to_string()
         );
 
         assert_eq!(

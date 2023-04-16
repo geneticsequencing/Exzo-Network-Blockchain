@@ -11,8 +11,8 @@ mkdir -p "$SOLANA_CONFIG_DIR"/latest-testnet-snapshot
 (
   cd "$SOLANA_CONFIG_DIR"/latest-testnet-snapshot || exit 1
   set -x
-  wget http://rpc-test-1.exzo.network/rpc/genesis.tar.bz2
-  wget --trust-server-names http://rpc-test-1.exzo.network/rpc/snapshot.tar.bz2
+  wget http://api.testnet.exzo.network/genesis.tar.bz2
+  wget --trust-server-names http://api.testnet.exzo.network/snapshot.tar.bz2
 )
 
 snapshot=$(ls "$SOLANA_CONFIG_DIR"/latest-testnet-snapshot/snapshot-[0-9]*-*.tar.zst)

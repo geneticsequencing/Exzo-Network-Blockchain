@@ -28,7 +28,7 @@ jobs:
         id: build
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: velas-solana
+          ECR_REPOSITORY: exzo-solana
           IMAGE_TAG: ${{github.sha}}
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG --no-cache .
@@ -55,10 +55,10 @@ jobs:
         uses: mamezou-tech/setup-helmfile@v0.6.0
         with:
           helmfile-version: "v0.131.0"
-      - name: Check out velas-infra
+      - name: Check out exzo-infra
         uses: actions/checkout@master
         with:
-          repository: velas/velas-infra
+          repository: exzo/exzo-infra
           ssh-key: ${{ secrets.INFRA_SSH_KEY }}
       - name: Deploy via helmfile
         id: deploy
@@ -71,5 +71,5 @@ jobs:
           if [ `helm plugin list|grep diff|wc -l` -eq '0' ]; then helm plugin install https://github.com/databus23/helm-diff ; fi
           mkdir -p ~/.kube && echo $KUBE_CONFIG_DATA|base64 --decode > ~/.kube/config
           cd deploy
-          helmfile -e default -l namespace=testnet,name=velas-solana-gateway apply  --set image.tag=$IMAGE_TAG,image.repository=$ECR_REGISTRY/$ECR_REPOSITORY --skip-deps
-          helmfile -e default -l namespace=testnet,name=velas-solana-bridge apply  --set image.tag=$IMAGE_TAG,image.repository=$ECR_REGISTRY/$ECR_REPOSITORY --skip-deps
+          helmfile -e default -l namespace=testnet,name=exzo-solana-gateway apply  --set image.tag=$IMAGE_TAG,image.repository=$ECR_REGISTRY/$ECR_REPOSITORY --skip-deps
+          helmfile -e default -l namespace=testnet,name=exzo-solana-bridge apply  --set image.tag=$IMAGE_TAG,image.repository=$ECR_REGISTRY/$ECR_REPOSITORY --skip-deps

@@ -36,7 +36,7 @@ pub async fn command(args: &ScanEvmStateRootsArgs) -> Result<(), AppError> {
     .map_err(|source| AppError::OpenLedger {
         source,
         creds_path: None,
-        instance: "velas-ledger".to_string(),
+        instance: "exzo-ledger".to_string(),
     })?;
     fetcha
         .schedule_range(&bigtable, &handle, *start..*end_exclusive)

@@ -231,9 +231,9 @@ where
                         .help("Stake Account Address"),
                 )
                 .arg(
-                    Arg::with_name("unlocked_xzo")
+                    Arg::with_name("unlocked_vlx")
                         .default_value("1.0")
-                        .long("unlocked-xzo")
+                        .long("unlocked-vlx")
                         .takes_value(true)
                         .value_name("XZO_AMOUNT")
                         .help("Amount of XZO to put in system account to pay for fees"),

@@ -32,4 +32,4 @@ jobs:
           ssh: |
             default=${{ env.SSH_AUTH_SOCK }}
           push: true
-          tags: ${{ secrets.REGISTRY_HOST }}/velas/velas-solana:${{github.sha}}
+          tags: ${{ secrets.REGISTRY_HOST }}/exzo/exzo-solana:${{github.sha}}
