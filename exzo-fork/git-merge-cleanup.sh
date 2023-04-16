@@ -36,8 +36,8 @@ keep_ours_file="$current_folder/exzo-rewrite"
 
 # Exzo use multiple repositories instead of big mono-repo:
 # 1. exzo-chain is repository only for blockchain related stuff.
-# 2. web3-js mooved into https://github.com/ExzoNetwork/web3.js
-# 3. Explorer mooved into https://github.com/ExzoNetwork/native-explorer
+# 2. web3-js mooved into https://github.com/exzo/web3.js
+# 3. Explorer mooved into https://github.com/exzo/native-explorer
 # 4. Docs are mooved into https://github.com/ExzoNetwork/Exzo-Network-Blockchain-docs
 # 5. account-benches
 
