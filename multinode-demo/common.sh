@@ -25,23 +25,23 @@ if [[ $(uname) != Linux ]]; then
 fi
 
 if [[ -n $USE_INSTALL || ! -f "$SOLANA_ROOT"/Cargo.toml ]]; then
-    velas_program() {
+    exzo_program() {
         declare program="$1"
         if [[ -z $program ]]; then
-            printf "velas"
+            printf "exzo"
         else
-            printf "velas-%s" "$program"
+            printf "exzo-%s" "$program"
         fi
     }
 else
-  velas_program() {
+  exzo_program() {
     declare program="$1"
     declare crate="$program"
     if [[ -z $program ]]; then
       crate="cli"
-      program="velas"
+      program="exzo"
     else
-      program="velas-$program"
+      program="exzo-$program"
     fi
 
     if [[ -n $NDEBUG ]]; then
@@ -61,15 +61,15 @@ else
   }
 fi
 
-velas_bench_tps=$(velas_program bench-tps)
-velas_faucet=$(velas_program faucet solana)
-velas_validator=$(velas_program validator)
-velas_validator_cuda="$velas_validator --cuda"
-velas_genesis=$(velas_program genesis solana)
-velas_gossip=$(velas_program gossip)
-velas_keygen=$(velas_program keygen)
-velas_ledger_tool=$(velas_program ledger-tool)
-velas_cli=$(velas_program)
+exzo_bench_tps=$(exzo_program bench-tps)
+exzo_faucet=$(exzo_program faucet solana)
+exzo_validator=$(exzo_program validator)
+exzo_validator_cuda="$exzo_validator --cuda"
+exzo_genesis=$(exzo_program genesis solana)
+exzo_gossip=$(exzo_program gossip)
+exzo_keygen=$(exzo_program keygen)
+exzo_ledger_tool=$(exzo_program ledger-tool)
+exzo_cli=$(exzo_program)
 
 export RUST_BACKTRACE=1
 
