@@ -153,7 +153,7 @@ impl RPCBlock {
                 b"Exzo EVM compatibility layer ...".to_vec().into()
             }
             evm_state::BlockVersion::VersionConsistentHashes => {
-                b"Exzo EVM compatibility layer.v2".to_vec().into()
+                b"Exzo EVM compatibility layer .v2".to_vec().into()
             }
         };
         RPCBlock {
