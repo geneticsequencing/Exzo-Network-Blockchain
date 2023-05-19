@@ -1,0 +1,4 @@
+exzo-changes-remote-*-*.txt
+exzo-changes-*-*.txt
+# Just exzo-changes with prefix :^ - mean that this pathspec should be ignored
+pathspec-*-*.txt
