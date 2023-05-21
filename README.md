@@ -4,7 +4,7 @@
 * Symbol - XZO
 * Supply - 50 Million
 * Blocktime - ~400ms
-* Consensus - IBFT Proof-of-Stake (PoS)
+* Consensus - DelegatedProof-of-Stake (PoS)
 * P2P Port - 
 * JSON-RPC Port - 8899
 * ChainID Mainnet - 1229
